@@ -1,12 +1,12 @@
-
+package com.example.Unidad1.Iterador;
 import java.util.Vector;
 
-public class EditorTexto {
+public class EditorTextoMain {
 
     // Vector para almacenar los cambios realizados
     private Vector<String> historialCambios;
 
-    public EditorTexto() {
+    public EditorTextoMain() {
         historialCambios = new Vector<>();
     }
 
@@ -33,7 +33,7 @@ public class EditorTexto {
 
     // Programa principal para prueba
     public static void main(String[] args) {
-        EditorTexto editor = new EditorTexto();
+        EditorTextoMain editor = new EditorTextoMain();
 
         editor.registrarCambio("Se escribió 'Hola'");
         editor.registrarCambio("Se borró 'a'");

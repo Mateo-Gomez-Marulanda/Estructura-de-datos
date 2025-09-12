@@ -6,6 +6,41 @@
     "configurations": [
         {
             "type": "java",
+            "name": "InvertirListaMain",
+            "request": "launch",
+            "mainClass": "com.example.Unidad1.Generico.InvertirListaMain",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "MaximoElementoMai",
+            "request": "launch",
+            "mainClass": "com.example.Unidad1.Comparables.MaximoElementoMai",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "MaximoElementoMain",
+            "request": "launch",
+            "mainClass": "com.example.Unidad1.Comparables.MaximoElementoMain",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "AgruparListasMain",
+            "request": "launch",
+            "mainClass": "com.example.Unidad1.Generico.AgruparListasMain",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "IteradorCadenaMain",
+            "request": "launch",
+            "mainClass": "com.example.Unidad1.Iterador.IteradorCadenaMain",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
             "name": "MainCajaGenerica",
             "request": "launch",
             "mainClass": "com.example.Unidad1.Generico.MainCajaGenerica",
