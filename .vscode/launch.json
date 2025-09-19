@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "SimpleAnidadaGenericaMain",
+            "request": "launch",
+            "mainClass": "com.example.Unidad2.ListaSImpleAnidadaGenerica.SimpleAnidadaGenericaMain",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
             "name": "MultiplicarRecursivoMain",
             "request": "launch",
             "mainClass": "com.example.Unidad1.Recursividad.MultiplicarRecursivoMain",
