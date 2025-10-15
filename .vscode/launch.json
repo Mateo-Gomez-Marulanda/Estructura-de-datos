@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Punto2",
+            "request": "launch",
+            "mainClass": "com.example.Unidad2.Preparcial2.Punto2.Punto2",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
             "name": "Dijkstra",
             "request": "launch",
             "mainClass": "com.example.Unidad2.algoritmDijkra.Dijkstra",
