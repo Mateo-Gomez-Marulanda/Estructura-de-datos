@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Dijkstra",
+            "request": "launch",
+            "mainClass": "com.example.Unidad2.algoritmDijkra.Dijkstra",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
             "name": "SimpleAnidadaGenericaMain",
             "request": "launch",
             "mainClass": "com.example.Unidad2.ListaSImpleAnidadaGenerica.SimpleAnidadaGenericaMain",

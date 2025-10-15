@@ -103,6 +103,59 @@ class ListaSimpleEnlazada<T> {
             }
         }
     }
+
+    // verifica que no este vacia
+    public boolean esVacia() {
+        return (primero == null && tam == 0) ? true : false;
+    }
+
+    public int localizar(T dato) {
+        Nodo<T> actual = primero;
+        int indexBusqueda = 0;
+
+        while (actual != null) {
+            if (actual.getDato().equals(dato)) {
+                return indexBusqueda;
+            }
+            indexBusqueda++;
+            actual = actual.getProximo();
+        }
+        return -1;
+    }
+
+    // confirma si un metodo existe en una lista anidada
+    public boolean buscar(T dato) {
+        Nodo<T> actual = primero;
+
+        while (actual != null) {
+            if (actual.getDato().equals(dato)) {
+                return true;
+            }
+            actual = actual.getProximo();
+        }
+        return false;
+    }
+
+    public boolean eliminar(T datoBusqueda) {
+        Nodo<T> actual = primero;
+
+        if (actual.getDato().equals(datoBusqueda)) {
+            primero = actual.getProximo();
+            tam--;
+            return true;
+        } else {
+            while (actual.getProximo() != null) {
+                if (actual.getProximo().getDato().equals(datoBusqueda)) {
+                    actual.setProximo(actual.getProximo().getProximo());
+                    tam--;
+                    return true;
+
+                }
+            }
+
+        }
+        return false;
+    }
 }
 
 public class SimpleAnidadaGenericaMain {

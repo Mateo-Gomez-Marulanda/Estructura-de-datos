@@ -2,7 +2,7 @@ package com.example.Unidad1.Recursividad;
 
 public class RecurrenciaArregloMatriz {
      public static void main(String[] args) {
-        int[] ar = {1, 2, 3, 4};
+       // int[] ar = {1, 2, 3, 4};
         int[][] matriz = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
 
 //        recorrerArreglo(ar, 0);
