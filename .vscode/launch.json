@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Punto5",
+            "request": "launch",
+            "mainClass": "com.example.Unidad2.Preparcial2.Punto5.Punto5",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "Punto4",
+            "request": "launch",
+            "mainClass": "com.example.Unidad2.Preparcial2.Punto4.Punto4",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "Punto3",
+            "request": "launch",
+            "mainClass": "com.example.Unidad2.Preparcial2.Punto3.Punto3",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
             "name": "Punto2",
             "request": "launch",
             "mainClass": "com.example.Unidad2.Preparcial2.Punto2.Punto2",

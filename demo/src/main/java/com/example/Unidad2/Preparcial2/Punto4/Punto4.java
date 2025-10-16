@@ -1,12 +1,5 @@
-package com.example.Unidad2.Preparcial2.Punto2;
+package com.example.Unidad2.Preparcial2.Punto4;
 
-/*
- * Se tiene una pila de enteros positivos.
- * Con las operaciones básicas de pilas y colas escribir un método para poner todos los elementos primos
- * de la pila en la cola. Retorne la cola final.
- */
-
-import com.example.Unidad2.Cola.*;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
@@ -117,48 +110,37 @@ class Pila {
         ordenarPila(Comparator.reverseOrder());
     }
 
-    public static boolean esPrimo(int numero) {
-        if (numero <= 1) {
-            return false;
-        }
-        for (int i = 2; i <= Math.sqrt(numero); i++) {
-            if (numero % i == 0) {
-                return false;
-            }
-        }
-        return true;
-    }
+    public Integer convercionDecimalBinario(Integer dato) {
 
-    public Cola<Integer> conversionPilaCola(Pila pila) {
-        Cola<Integer> cola = new Cola<>();
-
-        Nodo actual = pila.cima;
-        while (actual != null) {
-            int valor = actual.getDato();
-            if (esPrimo(valor)) {
-                cola.encolar(valor);
-            }
-            actual = actual.getProximo();
+        if (dato < 0) {
+            throw new IllegalArgumentException("El numero debe ser positivo");
         }
-        return cola;
+
+        while (dato > 0) {
+            int residuo = dato % 2;
+            empilar(residuo);
+            dato = dato / 2;
+        }
+
+        StringBuilder binario = new StringBuilder();
+        while (!estaVacia()) {
+            binario.append(desempilar());
+        }
+
+        return Integer.parseInt(binario.toString());
     }
 }
 
-// pila 1-2-3-4-5 first return 5 LiFo
-// colaPrima 5-3-2 -> ordenar() [mera estetica]
-// cola 1-2-3-4-5 fisrt return 1 FiFo
-public class Punto2 {
+public class Punto4 {
+    /*
+     * Escriba un método que lea un número entero positivo e imprima su
+     * representación binaria,
+     * use pilas o colas. El método debe retornar un entero.
+     * 
+     * -como recomendacion personal es mejor usar pilas por su logica LiFo
+     */
     public static void main(String[] args) {
         Pila pila = new Pila();
-        pila.empilar(1);
-        pila.empilar(2);
-        pila.empilar(3);
-        pila.empilar(4);
-        pila.empilar(5);
-
-        System.out.println(pila);
-
-        Cola<Integer> colaPrimos = pila.conversionPilaCola(pila);
-        colaPrimos.imprimirCola();
+        System.out.println("El numero en binario es: " + pila.convercionDecimalBinario(10));
     }
 }

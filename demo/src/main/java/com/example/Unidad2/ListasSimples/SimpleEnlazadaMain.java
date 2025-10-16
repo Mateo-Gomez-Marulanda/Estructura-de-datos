@@ -48,7 +48,7 @@ class ListaSimpleEnlazada<T extends Comparable<T>> {
     }
 
     public void agregarPrimero(T dato) {
-        Nodo<T> newNodo = new Nodo(dato);
+        Nodo<T> newNodo = new Nodo<>(dato);
 
         if (primero == null) {
             primero = newNodo;
@@ -73,7 +73,7 @@ class ListaSimpleEnlazada<T extends Comparable<T>> {
     }
 
     public void agregarUltimo(T dato) {
-        Nodo<T> newNodo = new Nodo(dato);
+        Nodo<T> newNodo = new Nodo<>(dato);
         if (primero == null) {
             primero = newNodo;
             tam++;
@@ -171,7 +171,7 @@ class ListaSimpleEnlazada<T extends Comparable<T>> {
     // metodo para insercion de manera natural
 
     public void insercionNatural(T dato) {
-        Nodo<T> nuevo = new Nodo(dato);
+        Nodo<T> nuevo = new Nodo<>(dato);
 
         if (primero == null || dato.compareTo(primero.getDato()) <= 0) {
             nuevo.setProximo(primero);
