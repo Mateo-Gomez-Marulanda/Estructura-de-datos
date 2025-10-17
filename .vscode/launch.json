@@ -6,6 +6,27 @@
     "configurations": [
         {
             "type": "java",
+            "name": "Punto7",
+            "request": "launch",
+            "mainClass": "com.example.Unidad2.Preparcial2.Punto7.Punto7",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "ColaMain",
+            "request": "launch",
+            "mainClass": "com.example.Unidad2.Cola.ColaMain",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
+            "name": "StackReverse",
+            "request": "launch",
+            "mainClass": "com.example.Unidad2.Preparcial2.Punto8.StackReverse",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
             "name": "Punto5",
             "request": "launch",
             "mainClass": "com.example.Unidad2.Preparcial2.Punto5.Punto5",

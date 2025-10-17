@@ -1,4 +1,4 @@
-package com.example.Unidad2.ListasCirculares;
+package com.example.Unidad2.ListasCirculares.CircularDobleEnlazada;
 
 //algun dia la hare 
 

@@ -1,48 +1,14 @@
-package com.example.Unidad2.ListasSimples;
+package com.example.Unidad2.ListasSimples.SimpleDobleEnlazada;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 
-class Nodo<T> {
-    private T dato;
-    private Nodo<T> proximo; // Referencia al siguiente elemento
-
-    public Nodo(T dato) {
-        this.dato = dato;
-        proximo = null; // Null inicialmente ya que no referencia a nada antes de estar en la lista
-    }
-
-    public T getDato() {
-        return dato;
-    }
-
-    public void setDato(T dato) {
-        this.dato = dato;
-    }
-
-    public Nodo<T> getProximo() {
-        return proximo;
-    }
-
-    public void setProximo(Nodo<T> proximo) {
-        this.proximo = proximo;
-    }
-
-    @Override
-    public String toString() {
-        return "Nodo{" +
-                "dato=" + dato +
-                ", proximo=" + proximo +
-                '}';
-    }
-}
-
-class ListaSimpleEnlazada<T extends Comparable<T>> {
+public class ListaDobleEnlazada<T extends Comparable<T>> {
     private Nodo<T> primero;
     private int tam;
 
-    public ListaSimpleEnlazada() {
+    public ListaDobleEnlazada() {
         primero = null;
         tam = 0;
     }
@@ -55,6 +21,7 @@ class ListaSimpleEnlazada<T extends Comparable<T>> {
             tam++;
         } else {
             newNodo.setProximo(primero);
+            primero.setAnterior(newNodo);
             primero = newNodo;
             tam++;
         }
@@ -83,29 +50,39 @@ class ListaSimpleEnlazada<T extends Comparable<T>> {
                 actual = actual.getProximo();
             }
             actual.setProximo(newNodo);
+            newNodo.setAnterior(actual);
             tam++;
         }
     }
 
     public void agregarEnPosicionEspecifica(T dato, int posicion) {
 
-        if (posicion <= 0) { // pequeña excepcion por si se pide un posicio 0 o negativo, agregarlo al inicio
+        if (posicion <= 0) { // si es posición 0 o negativa, agregar al inicio
             agregarPrimero(dato);
             return;
         }
-        if (posicion >= tam) { // pequeña excepcion por si la posicion es igual o mayor al tamaño y agregar al
-                               // final
+        if (posicion >= tam) { // si es igual o mayor que el tamaño, agregar al final
             agregarUltimo(dato);
             return;
         }
 
         Nodo<T> nuevo = new Nodo<>(dato);
         Nodo<T> actual = primero;
+
         for (int i = 0; i < posicion - 1; i++) {
             actual = actual.getProximo();
         }
-        nuevo.setProximo(actual.getProximo());
+
+        Nodo<T> siguiente = actual.getProximo();
+
+        nuevo.setProximo(siguiente);
+        nuevo.setAnterior(actual);
+
         actual.setProximo(nuevo);
+        if (siguiente != null) {
+            siguiente.setAnterior(nuevo);
+        }
+
         tam++;
     }
 
@@ -215,7 +192,7 @@ class ListaSimpleEnlazada<T extends Comparable<T>> {
         return true;
     }
 
-    private void ordenarListaSimpleEnlazada(Comparator<T> comp) {
+    private void ordenarListaDoblementeEnlazada(Comparator<T> comp) {
         List<T> datos = new ArrayList<>();
         Nodo<T> actual = primero;
         while (actual != null) {
@@ -224,7 +201,6 @@ class ListaSimpleEnlazada<T extends Comparable<T>> {
         }
         datos.sort(comp);
 
-        // Volver a insertar en los nodos
         actual = primero;
         for (T dato : datos) {
             actual.setDato(dato);
@@ -233,21 +209,14 @@ class ListaSimpleEnlazada<T extends Comparable<T>> {
     }
 
     public void ordenarNatural() {
-        ordenarListaSimpleEnlazada(Comparator.naturalOrder());
+        ordenarListaDoblementeEnlazada(Comparator.naturalOrder());
     }
 
     public void ordenarAscendente() {
-        ordenarListaSimpleEnlazada(Comparator.naturalOrder());
+        ordenarListaDoblementeEnlazada(Comparator.naturalOrder());
     }
 
     public void ordenarDescendente() {
-        ordenarListaSimpleEnlazada(Comparator.reverseOrder());
-    }
-}
-
-public class SimpleEnlazadaMain {
-
-    public static void main(String[] args) {
-
+        ordenarListaDoblementeEnlazada(Comparator.reverseOrder());
     }
 }

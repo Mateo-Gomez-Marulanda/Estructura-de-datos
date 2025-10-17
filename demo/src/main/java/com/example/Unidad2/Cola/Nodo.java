@@ -1,6 +1,6 @@
 package com.example.Unidad2.Cola;
 
-class Nodo<T> {
+public class Nodo<T> {
     private T dato;
     private Nodo<T> proximo;
     private Nodo<T> anterior;
