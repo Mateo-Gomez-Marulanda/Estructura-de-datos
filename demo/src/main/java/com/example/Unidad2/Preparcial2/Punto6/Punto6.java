@@ -21,6 +21,7 @@ public class Punto6 {
      * En la lista mostrada como puede apreciarse, la suma de todos sus valores es
      * 1 + 2 + 3 +2 (-6) = 2.
      * 1 + 2 + (2) 3 + 2 + (2) + 6 + 2.
+     * - vaya mierdota que toca hacer D:
      */
     public static void main(String[] args) {
 

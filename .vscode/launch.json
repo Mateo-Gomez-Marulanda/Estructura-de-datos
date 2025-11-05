@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "ArbolBinarioMain",
+            "request": "launch",
+            "mainClass": "com.example.Unidad3.Arboles.ArbolBinario.ArbolBinarioMain",
+            "projectName": "demo"
+        },
+        {
+            "type": "java",
             "name": "Punto7",
             "request": "launch",
             "mainClass": "com.example.Unidad2.Preparcial2.Punto7.Punto7",
